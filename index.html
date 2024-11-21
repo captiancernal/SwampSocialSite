@@ -346,6 +346,174 @@ button.like-btn:hover, button.reply-btn:hover {
         filter: drop-shadow(0 0 15px #ffcc00);
       }
     }
+.highlights-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.highlight {
+  text-align: center;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #fa4616;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.highlight h3 {
+  color: #0021a5;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.screenshot-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.highlight-screenshot {
+  width: 150px;
+  height: auto;
+  border: 3px solid #ffcc00;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for Image Gallery */
+#photo-gallery {
+  position: relative;
+  max-width: 560px;
+  height: 315px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 3px solid #fa4616;
+  border-radius: 10px;
+}
+
+.gallery-img {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.gallery-img.active {
+  left: 0;
+  opacity: 1;
+}
+
+.gallery-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px; 
+  background-color: #fa4616;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-btn:hover {
+  background-color: #0021a5;
+  transform: scale(1.1);
+}
+
+
+
+/* Quiz Section Styling */
+#quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to bottom right, #004085, #f58220); /* Gators' colors */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: 20px auto;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Header Styling */
+#quiz-container h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Question Styling */
+#quiz-container p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Answer Button Styling */
+#quiz-container .quiz-option {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #004085; /* Dark blue */
+  background-color: #f58220; /* Gators' orange */
+  border: 2px solid #004085;
+  border-radius: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover and Active States */
+#quiz-container .quiz-option:hover {
+  transform: scale(1.05);
+  background-color: #004085;
+  color: #f58220;
+}
+
+#quiz-container .quiz-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Results Styling */
+#quiz-container div {
+  margin-top: 20px;
+}
+
+#quiz-container button {
+  padding: 12px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f58220;
+  background-color: #004085;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#quiz-container button:hover {
+  background-color: #f58220;
+  color: #004085;
+  transform: scale(1.1);
+}
+
+
   </style>
 </header>
 
@@ -359,6 +527,7 @@ button.like-btn:hover, button.reply-btn:hover {
     <a href="#news" onclick="showTab('news')">Gator Byte News</a>
     <a href="#forum" onclick="showTab('forum')">Forum</a>
     <a href="#quiz" onclick="showTab('quiz')">Quiz</a>
+    <a href="#highlights" onclick="showTab('highlights')">Highlights</a>
 
   </nav>
 
@@ -383,7 +552,7 @@ button.like-btn:hover, button.reply-btn:hover {
     </thead>
     <tbody>
       <tr>
-        <td>D. Lagway</td>
+        <td>DJ Lagway</td>
         <td>QB</td>
         <td>1,039</td>
         <td>84</td>
@@ -394,7 +563,7 @@ button.like-btn:hover, button.reply-btn:hover {
         <td>38</td>
       </tr>
       <tr>
-        <td>P. Leise</td>
+        <td>Parker Leise</td>
         <td>QB</td>
         <td>0</td>
         <td>0</td>
@@ -405,7 +574,7 @@ button.like-btn:hover, button.reply-btn:hover {
         <td>0</td>
       </tr>
       <tr>
-        <td>G. Mertz</td>
+        <td>Graham Mertz</td>
         <td>QB</td>
         <td>0</td>
         <td>0</td>
@@ -416,7 +585,7 @@ button.like-btn:hover, button.reply-btn:hover {
         <td>0</td>
       </tr>
       <tr>
-        <td>C. Millen</td>
+        <td>Clay Millen</td>
         <td>QB</td>
         <td>0</td>
         <td>0</td>
@@ -446,7 +615,7 @@ button.like-btn:hover, button.reply-btn:hover {
     </thead>
     <tbody>
       <tr>
-        <td>M. Johnson Jr.</td>
+        <td>Montrell Johnson Jr.</td>
         <td>HB</td>
         <td>46</td>
         <td>219</td>
@@ -456,7 +625,7 @@ button.like-btn:hover, button.reply-btn:hover {
         <td>73</td>
       </tr>
       <tr>
-        <td>T. Webb</td>
+        <td>Treyaun Webb</td>
         <td>HB</td>
         <td>10</td>
         <td>59</td>
@@ -466,17 +635,17 @@ button.like-btn:hover, button.reply-btn:hover {
         <td>19</td>
       </tr>
       <tr>
-        <td>D. Lagway</td>
+        <td>DJ Lagway</td>
         <td>QB</td>
         <td>15</td>
         <td>41</td>
         <td>2.7</td>
-        <td>0</td>
+        <td>1</td>
         <td>1</td>
         <td>13</td>
       </tr>
       <tr>
-        <td>C. Carroll</td>
+        <td>Cam Carroll</td>
         <td>HB</td>
         <td>2</td>
         <td>22</td>
@@ -484,16 +653,6 @@ button.like-btn:hover, button.reply-btn:hover {
         <td>0</td>
         <td>0</td>
         <td>22</td>
-      </tr>
-      <tr>
-        <td>T. Abrams</td>
-        <td>HB</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
       </tr>
     </tbody>
   </table>
@@ -514,7 +673,7 @@ button.like-btn:hover, button.reply-btn:hover {
     </thead>
     <tbody>
       <tr>
-        <td>M. Johnson Jr.</td>
+        <td>Montrell Johnson Jr.</td>
         <td>HB</td>
         <td>25</td>
         <td>272</td>
@@ -523,25 +682,25 @@ button.like-btn:hover, button.reply-btn:hover {
         <td>23</td>
       </tr>
       <tr>
-        <td>E. Wilson III</td>
+        <td>Eugene Wilson III</td>
         <td>WR</td>
         <td>12</td>
         <td>178</td>
         <td>14.8</td>
         <td>1</td>
-        <td>59</td>
+        <td>38</td>
       </tr>
       <tr>
-        <td>A. Boardingham</td>
+        <td>Arlis Boardingham</td>
         <td>TE</td>
         <td>11</td>
         <td>168</td>
         <td>15.3</td>
-        <td>1</td>
-        <td>38</td>
+        <td>2</td>
+        <td>27</td>
       </tr>
       <tr>
-        <td>C. Dike</td>
+        <td>Chimere Dike</td>
         <td>WR</td>
         <td>12</td>
         <td>144</td>
@@ -550,31 +709,58 @@ button.like-btn:hover, button.reply-btn:hover {
         <td>47</td>
       </tr>
       <tr>
-        <td>E. Badger</td>
+        <td>Elijah Badger</td>
         <td>WR</td>
         <td>10</td>
         <td>122</td>
         <td>12.2</td>
-        <td>0</td>
-        <td>29</td>
+        <td>2</td>
+        <td>35</td>
       </tr>
       <tr>
-        <td>T. Webb</td>
+        <td>Trayaun Webb</td>
         <td>HB</td>
         <td>4</td>
         <td>65</td>
         <td>16.3</td>
-        <td>0</td>
-        <td>19</td>
+        <td>1</td>
+        <td>36</td>
       </tr>
       <tr>
-        <td>H. Hansen</td>
+        <td>Hayden Hansen</td>
         <td>TE</td>
         <td>4</td>
         <td>38</td>
         <td>9.5</td>
         <td>0</td>
-        <td>18</td>
+        <td>19</td>
+      </tr>
+	<tr>
+        <td>Keon Zipperer</td>
+        <td>TE</td>
+        <td>2</td>
+        <td>24</td>
+        <td>12.0</td>
+        <td>0</td>
+        <td>12</td>
+      </tr>
+	<tr>
+        <td>Marcus Burke</td>
+        <td>WR</td>
+        <td>3</td>
+        <td>19</td>
+        <td>6.3</td>
+        <td>0</td>
+        <td>11</td>
+      </tr>
+	<tr>
+        <td>Aidan Mizell</td>
+        <td>WR</td>
+        <td>1</td>
+        <td>9</td>
+        <td>9.0</td>
+        <td>0</td>
+        <td>9</td>
       </tr>
     </tbody>
   </table>
@@ -820,6 +1006,55 @@ button.like-btn:hover, button.reply-btn:hover {
         <td>33</td>
         <td>1</td>
       </tr>
+        <td>A. Boardingham</td>
+        <td>3</td>
+        <td>53</td>
+        <td>17.7</td>
+        <td>0</td>
+        <td>1.7</td>
+        <td>27</td>
+        <td>1</td>
+      </tr>
+	</tr>
+        <td>C. Dike</td>
+        <td>4</td>
+        <td>52</td>
+        <td>13.0</td>
+        <td>1</td>
+        <td>2.5</td>
+        <td>26</td>
+        <td>0</td>
+      </tr>
+	</tr>
+        <td>E. Badger</td>
+        <td>2</td>
+        <td>31</td>
+        <td>15.5</td>
+        <td>0</td>
+        <td>1.5</td>
+        <td>26</td>
+        <td>0</td>
+      </tr>
+	<tr>
+        <td>K. Zippier</td>
+        <td>2</td>
+        <td>24</td>
+        <td>12.0</td>
+        <td>0</td>
+        <td>8.0</td>
+        <td>12</td>
+        <td>1</td>
+      </tr>
+	<tr>
+        <td>H. Hansen</td>
+        <td>1</td>
+        <td>8</td>
+        <td>8.0</td>
+        <td>0</td>
+        <td>3.0</td>
+        <td>8</td>
+        <td>1</td>
+      </tr>
     </tbody>
   </table>
 
@@ -948,7 +1183,7 @@ document.head.appendChild(style);
         <td>5</td>
         <td>8</td>
         <td>1.6</td>
-        <td>0</td>
+        <td>1</td>
         <td>0</td>
         <td>5</td>
         <td>0</td>
@@ -979,14 +1214,14 @@ document.head.appendChild(style);
         <td>2</td>
         <td>8.0</td>
         <td>23</td>
-        <td>0</td>
+        <td>2</td>
       </tr>
       <tr>
         <td>E. Badger</td>
         <td>4</td>
         <td>81</td>
         <td>20.3</td>
-        <td>2</td>
+        <td>0</td>
         <td>20.0</td>
         <td>88</td>
         <td>0</td>
@@ -996,7 +1231,7 @@ document.head.appendChild(style);
         <td>5</td>
         <td>65</td>
         <td>13.0</td>
-        <td>1</td>
+        <td>0</td>
         <td>26.0</td>
         <td>18</td>
         <td>0</td>
@@ -1010,6 +1245,46 @@ document.head.appendChild(style);
         <td>5.0</td>
         <td>15</td>
         <td>0</td>
+      </tr>
+	<tr>
+        <td>E. Wilson III</td>
+        <td>2</td>
+        <td>22</td>
+        <td>11.0</td>
+        <td>0</td>
+        <td>1.0</td>
+        <td>12</td>
+        <td>2</td>
+      </tr>
+	<tr>
+        <td>M. Burke</td>
+        <td>3</td>
+        <td>19</td>
+        <td>6.3</td>
+        <td>0</td>
+        <td>2.3</td>
+        <td>11</td>
+        <td>0</td>
+      </tr>
+	<tr>
+        <td>A. Mizel</td>
+        <td>1</td>
+        <td>9</td>
+        <td>9.0</td>
+        <td>0</td>
+        <td>1.0</td>
+        <td>9</td>
+        <td>0</td>
+      </tr>
+	<tr>
+        <td>H. Hansen</td>
+        <td>1</td>
+        <td>6</td>
+        <td>6.0</td>
+        <td>0</td>
+        <td>0.0</td>
+        <td>6</td>
+        <td>1</td>
       </tr>
     </tbody>
   </table>
@@ -1152,7 +1427,7 @@ document.head.appendChild(style);
         <td>80</td>
         <td>16.0</td>
         <td>2</td>
-        <td>29</td>
+        <td>5.8</td>
         <td>27</td>
         <td>0</td>
       </tr>
@@ -1162,7 +1437,7 @@ document.head.appendChild(style);
         <td>70</td>
         <td>17.5</td>
         <td>1</td>
-        <td>36</td>
+        <td>2.3</td>
         <td>38</td>
         <td>0</td>
       </tr>
@@ -1172,8 +1447,8 @@ document.head.appendChild(style);
         <td>65</td>
         <td>16.3</td>
         <td>1</td>
-        <td>76</td>
-        <td>18</td>
+        <td>19.0</td>
+        <td>36</td>
         <td>0</td>
       </tr>
       <tr>
@@ -1182,18 +1457,18 @@ document.head.appendChild(style);
         <td>54</td>
         <td>10.8</td>
         <td>0</td>
-        <td>55</td>
+        <td>11.0</td>
         <td>18</td>
         <td>0</td>
       </tr>
       <tr>
         <td>C. Dike</td>
-        <td>2</td>
+        <td>3</td>
         <td>27</td>
         <td>9.0</td>
         <td>1</td>
-        <td>11</td>
-        <td>15</td>
+        <td>3.7</td>
+        <td>14</td>
         <td>0</td>
       </tr>
       <tr>
@@ -1201,10 +1476,20 @@ document.head.appendChild(style);
         <td>2</td>
         <td>24</td>
         <td>12.0</td>
-        <td>1</td>
-        <td>11</td>
-        <td>20</td>
         <td>0</td>
+        <td>2.0</td>
+        <td>19</td>
+        <td>0</td>
+      </tr>
+	<tr>
+        <td>E. Badger</td>
+        <td>4</td>
+        <td>10</td>
+        <td>2.5</td>
+        <td>2</td>
+        <td>1.5</td>
+        <td>7</td>
+        <td>1</td>
       </tr>
     </tbody>
   </table>
@@ -1372,13 +1657,13 @@ const breakingNewsPosts = [
   ],
 },
 {
-  headline: "Trevor Etienne Teaches Dance at Campus Workshop",
-  content: "Running back Trevor Etienne showed off his footwork by leading a dance workshop at the UF Student Union. Known for his agility on the field, Etienne proved he’s just as graceful in the dance studio.",
+  headline: "Cam Carroll Teaches Dance at Campus Workshop",
+  content: "Running back Cam Carroll showed off his footwork by leading a dance workshop at the UF Student Union. Known for his agility on the field, Carroll proved he’s just as graceful in the dance studio.",
   timestamp: "3:00 PM - November 15, 2024",
   likes: 42,
   replies: [
-    { user: "@DanceFanatic", comment: "I didn’t know Trevor could moonwalk! Amazing class!" },
-    { user: "@GatorGroove", comment: "Trevor’s moves are as smooth as his runs." },
+    { user: "@DanceFanatic", comment: "I didn’t know Cam could moonwalk! Amazing class!" },
+    { user: "@GatorGroove", comment: "Cam's moves are as smooth as his runs." },
     { user: "@RivalRant", comment: "Guess he’s training for his next loss to Georgia." },
   ],
 },
@@ -1871,10 +2156,7 @@ renderBreakingNews();
 
 
 
-  <footer>
-  <img src="https://i.postimg.cc/tRVjQbYf/florida-gators-logotyp-us.png" alt="Gators Logo" style="height: 50px; margin: 10px auto;">
-  <p>&copy; 2024 Swamp Social. All rights reserved. <strong>Go Gators!</strong></p>
-</footer>
+  
 
 
   <script>
@@ -1958,88 +2240,188 @@ renderBreakingNews();
 ];
 
   let currentQuiz = [];
-  let currentQuestionIndex = 0;
-  let score = 0;
+let currentQuestionIndex = 0;
+let score = 0;
 
-  function startQuiz() {
-    score = 0;
-    currentQuestionIndex = 0;
-    currentQuiz = quizQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
-    showQuestion();
+function startQuiz() {
+  score = 0;
+  currentQuestionIndex = 0;
+  currentQuiz = quizQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
+  showQuestion();
+}
+
+function showQuestion() {
+  const questionData = currentQuiz[currentQuestionIndex];
+  const quizContainer = document.getElementById("quiz-container");
+
+  quizContainer.innerHTML = `
+    <div>
+      <h3>Question ${currentQuestionIndex + 1} of 10</h3>
+      <p>${questionData.question}</p>
+      ${questionData.options
+        .map(
+          (option) =>
+            `<button class="quiz-option" onclick="submitAnswer('${option}', this)">${option}</button>`
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function submitAnswer(selected, buttonElement) {
+  const questionData = currentQuiz[currentQuestionIndex];
+
+  if (selected === questionData.answer) {
+    score++;
+    buttonElement.style.backgroundColor = "green"; // Correct answer
+  } else {
+    buttonElement.style.backgroundColor = "red"; // Incorrect answer
+
+    // Highlight the correct answer for reference
+    const correctButton = Array.from(document.querySelectorAll(".quiz-option")).find(
+      (btn) => btn.textContent === questionData.answer
+    );
+    if (correctButton) {
+      correctButton.style.backgroundColor = "green";
+    }
   }
 
-  function showQuestion() {
-    const questionData = currentQuiz[currentQuestionIndex];
-    const quizContainer = document.getElementById("quiz-container");
+  // Disable all buttons to prevent further clicks on this question
+  Array.from(document.querySelectorAll(".quiz-option")).forEach((btn) => {
+    btn.disabled = true;
+  });
 
-    quizContainer.innerHTML = `
-      <div>
-        <h3>Question ${currentQuestionIndex + 1} of 10</h3>
-        <p>${questionData.question}</p>
-        ${questionData.options
-          .map(
-            (option) =>
-              `<button class="quiz-option" onclick="submitAnswer('${option}', this)">${option}</button>`
-          )
-          .join("")}
-      </div>
-    `;
-  }
-
-  function submitAnswer(selected, buttonElement) {
-    const questionData = currentQuiz[currentQuestionIndex];
-
-    if (selected === questionData.answer) {
-      score++;
-      buttonElement.style.backgroundColor = "green"; // Correct answer
+  // Proceed to the next question after a short delay
+  setTimeout(() => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < currentQuiz.length) {
+      showQuestion();
     } else {
-      buttonElement.style.backgroundColor = "red"; // Incorrect answer
+      showResults();
+    }
+  }, 1000); // 1-second delay
+}
 
-      // Highlight the correct answer for reference
-      const correctButton = Array.from(document.querySelectorAll(".quiz-option")).find(
-        (btn) => btn.textContent === questionData.answer
-      );
-      if (correctButton) {
-        correctButton.style.backgroundColor = "green";
-      }
+function showResults() {
+  const quizContainer = document.getElementById("quiz-container");
+  const percentage = ((score / currentQuiz.length) * 100).toFixed(2);
+
+  quizContainer.innerHTML = `
+    <div>
+      <h3>Quiz Complete!</h3>
+      <p>Your Score: ${score} / ${currentQuiz.length}</p>
+      <p>Percentage: ${percentage}%</p>
+      <button onclick="startQuiz()">Retake Quiz</button>
+    </div>
+  `;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  startQuiz(); // Start the quiz immediately when the page loads
+});
+
+</script>
+
+<div id="highlights" class="tab-content hidden">
+  <h2>Game Highlights</h2>
+  <div class="highlights-container">
+    
+    <!-- Week 1 Highlights -->
+    <div class="highlight">
+      <h3>Week 1: Florida vs. Miami - Offensive Highlights</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1031344419" 
+        width="560" 
+        height="315" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>Relive the thrilling offensive highlights from the Florida vs. Miami game in Week 1!</p>
+    </div>
+
+    <div class="highlight">
+      <h3>Week 1: Florida vs. Miami - Defensive Highlights</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1031344757" 
+        width="560" 
+        height="315" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>Check out the defensive dominance of the Gators in their Week 1 matchup against Miami.</p>
+    </div>
+
+    <!-- Week 2 Highlights -->
+    <div class="highlight">
+      <h3>Week 2: Florida vs. FCS Southeast</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1031322438" 
+        width="560" 
+        height="315" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>A dominant performance by the Gators. Relive the best plays from Week 2!</p>
+    </div>
+
+    <!-- PNG Image Gallery -->
+<div class="highlight">
+  <h3>Photo Gallery</h3>
+  <div id="photo-gallery">
+    <img src="https://imgur.com/VccTzZQ.png" alt="Highlight 1" class="gallery-img active">
+  <img src="https://imgur.com/EAG29ix.png" alt="Highlight 2" class="gallery-img">
+  <img src="https://imgur.com/RmgzTSB.png" alt="Highlight 3" class="gallery-img">
+  <img src="https://imgur.com/5Ln9yDl.png" alt="Highlight 4" class="gallery-img">
+  <img src="https://imgur.com/7vBtoPx.png" alt="Highlight 5" class="gallery-img">
+  <img src="https://imgur.com/A6PQt5D.png" alt="Highlight 6" class="gallery-img">
+  <img src="https://imgur.com/mCjbKqw.png" alt="Highlight 7" class="gallery-img">
+  <img src="https://imgur.com/uU6Vqt3.png" alt="Highlight 8" class="gallery-img">
+  <img src="https://imgur.com/scQrMyY.png" alt="Highlight 9" class="gallery-img">
+  </div>
+  <button id="prev-btn" class="gallery-btn">Previous</button>
+  <button id="next-btn" class="gallery-btn">Next</button>
+</div>
+
+
+
+
+<script>
+  // Image Gallery Functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("#photo-gallery .gallery-img");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.remove("active");
+        if (i === index) img.classList.add("active");
+      });
     }
 
-    // Disable all buttons to prevent further clicks on this question
-    Array.from(document.querySelectorAll(".quiz-option")).forEach((btn) => {
-      btn.disabled = true;
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
     });
 
-    // Proceed to the next question after a short delay
-    setTimeout(() => {
-      currentQuestionIndex++;
-      if (currentQuestionIndex < currentQuiz.length) {
-        showQuestion();
-      } else {
-        showResults();
-      }
-    }, 1000); // 1-second delay
-  }
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
 
-  function showResults() {
-    const quizContainer = document.getElementById("quiz-container");
-    const percentage = ((score / currentQuiz.length) * 100).toFixed(2);
-
-    quizContainer.innerHTML = `
-      <div>
-        <h3>Quiz Complete!</h3>
-        <p>Your Score: ${score} / ${currentQuiz.length}</p>
-        <p>Percentage: ${percentage}%</p>
-        <button onclick="startQuiz()">Retake Quiz</button>
-      </div>
-    `;
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const quizTab = document.querySelector('[href="#quiz"]');
-    quizTab.addEventListener("click", startQuiz);
+    // Initialize the first image
+    showImage(currentIndex);
   });
 </script>
 
+<footer>
+  <img src="https://i.postimg.cc/tRVjQbYf/florida-gators-logotyp-us.png" alt="Gators Logo" style="height: 50px; margin: 10px auto;">
+  <p>&copy; 2024 Swamp Social. All rights reserved. <strong>Go Gators!</strong></p>
+</footer>
 
 </body>
 </html>
