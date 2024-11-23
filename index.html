@@ -55,10 +55,17 @@ nav a {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+
+
 nav a:hover {
-  background-color: #fa4616; /* Orange highlight */
+  background-color: #fa4616; /* Original orange for all other tabs */
   transform: scale(1.1); /* Slight zoom on hover */
 }
+nav a[href="#forum"]:hover {
+  background-color: #FF0000; /* Vibrant red specific to the BREAKING NEWS tab */
+}
+
+
 
 /* Section Design */
 .container {
@@ -194,19 +201,41 @@ html {
 /* Breaking News Styling */
 .breaking-news-post {
   animation: fadeInBounce 1.5s ease-out;
-  border: 2px solid #ffcc00;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.8); /* Glow effect */
+  border: 3px solid #ff0000; /* Enhanced vibrant red border for urgency */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Stronger glow effect for prominence */
   padding: 20px;
   margin: 10px auto;
   border-radius: 10px;
-  background: white;
+  background: linear-gradient(135deg, #ffffff 60%, #ffcc00 40%); /* Added gradient for dynamic visual appeal */
+  position: relative;
+  overflow: hidden;
 }
 
+/* Adding a dynamic "LIVE" tag for breaking news */
+.breaking-news-post::before {
+  content: "LIVE";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #ff0000;
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  animation: blink 1s infinite alternate; /* Blinking animation for emphasis */
+}
+
+/* Header Styling */
 .breaking-news-post h3 {
   color: #fa4616;
+  font-size: 1.8em;
   margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px #ffcc00; /* Added shadow for better visibility */
 }
 
+/* Author and Timestamp Styling */
 .breaking-news-post p.author {
   font-weight: bold;
   color: #0021a5;
@@ -216,8 +245,50 @@ html {
 .breaking-news-post p.timestamp {
   font-style: italic;
   color: #666;
+  animation: fadeHighlight 3s infinite alternate; /* Subtle animation for timestamp to draw attention */
 }
 
+/* Hover Effects */
+.breaking-news-post:hover {
+  transform: scale(1.02); /* Slight zoom on hover for interaction */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animation Keyframes */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeHighlight {
+  0%, 100% {
+    color: #666;
+  }
+  50% {
+    color: #fa4616;
+  }
+}
+
+/* Like and Reply Buttons Styling */
+button.like-btn, button.reply-btn {
+  background-color: #fa4616;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+}
+
+button.like-btn:hover, button.reply-btn:hover {
+  background-color: #ffcc00;
+}
+
+/* Reply Section Enhancements */
 .reply-container {
   margin-top: 20px;
 }
@@ -242,28 +313,13 @@ html {
   border-radius: 10px;
   padding: 10px;
   max-width: 80%;
+  transition: background 0.3s ease;
 }
 
-.like-reply-buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+.reply-container .reply:hover .comment {
+  background: #e0e0ff;
 }
 
-button.like-btn, button.reply-btn {
-  background-color: #fa4616;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-family: 'Bebas Neue', sans-serif;
-  cursor: pointer;
-}
-
-button.like-btn:hover, button.reply-btn:hover {
-  background-color: #0021a5;
-}
 
 
 </style>
@@ -522,14 +578,28 @@ button.like-btn:hover, button.reply-btn:hover {
 
 
   <nav>
+    <a href="#forum" onclick="showTab('forum')">BREAKING NEWS</a>
     <a href="#stats" onclick="showTab('stats')">Season Stats</a>
     <a href="#schedule" onclick="showTab('schedule')">Season Schedule</a>
     <a href="#news" onclick="showTab('news')">Gator Byte News</a>
-    <a href="#forum" onclick="showTab('forum')">Forum</a>
     <a href="#quiz" onclick="showTab('quiz')">Quiz</a>
     <a href="#highlights" onclick="showTab('highlights')">Highlights</a>
 
   </nav>
+
+
+<div id="forum" class="tab-content">
+  <h2>Breaking News</h2>
+  <div id="forum-post-container" class="breaking-news-post">
+    <!-- Randomized breaking news post will appear here -->
+  </div>
+  <div class="reply-container">
+    <h3>Replies</h3>
+    <div id="replies"></div>
+    <input type="text" id="reply-input" placeholder="Write a reply as @BrickDupp..." />
+    <button class="reply-btn" onclick="addUserReply()">Reply</button>
+  </div>
+</div>
 
   <div id="stats" class="tab-content hidden">
   <h2>Season Stats</h2>
@@ -1516,19 +1586,6 @@ document.head.appendChild(style);
 
 
 
-    <div id="forum" class="tab-content">
-  <h2>Breaking News</h2>
-  <div id="forum-post-container" class="breaking-news-post">
-    <!-- Randomized breaking news post will appear here -->
-  </div>
-  <div class="reply-container">
-    <h3>Replies</h3>
-    <div id="replies"></div>
-    <input type="text" id="reply-input" placeholder="Write a reply as @BrickDupp..." />
-    <button class="reply-btn" onclick="addUserReply()">Reply</button>
-  </div>
-</div>
-
 <div id="quiz" class="tab-content hidden">
   <h2>Florida Gators Football Quiz</h2>
   <div id="quiz-container">
@@ -1899,8 +1956,8 @@ const breakingNewsPosts = [
     ],
   },
   {
-    headline: "Jason Marshall Jr. Sidelined with Hamstring Strain",
-    content: "Star defensive back Jason Marshall Jr. suffered a hamstring strain during practice. Trainers estimate he’ll miss 2-3 weeks while he recovers.",
+    headline: "Jason Marshall Jr. Questionable with Hamstring Strain",
+    content: "Star defensive back Jason Marshall Jr. suffered a hamstring injury during practice. Trainers tended to Marshall on the sideline and his status for Saturday is unknown, pending the results of an MRI.",
     timestamp: "8:00 AM - November 13, 2024",
     likes: 34,
     replies: [
@@ -1976,13 +2033,13 @@ const breakingNewsPosts = [
     ],
   },
 {
-    headline: "Cam Jackson (DL) Undergoes Surgery for Torn Achilles",
-    content: "Senior defensive lineman Cam Jackson suffered a torn Achilles during Monday's practice. Surgery was successful, but Jackson is expected to miss the rest of the season. This injury marks a significant setback for the Gators' defensive line.",
+    headline: "Cam Jackson (DL) Leaves Practice Early to Witness the Birth of His Son",
+    content: "Senior defensive lineman Cam Jackson was all smiles during Monday's practice before getting the call that his girlfriend's water has broken. Jackson vows to dedicate the upcoming game to Cam Jr.",
     timestamp: "8:15 PM - November 16, 2024",
     likes: 89,
     replies: [
-      { user: "@GatorFanatic", comment: "Prayers up for Cam! Hope he comes back stronger!" },
-      { user: "@TideRivalry", comment: "Tough loss for Florida, but it’s part of the game." },
+      { user: "@GatorFanatic", comment: "Prayers up for Baby Cam! Hope he grows up big and strong!" },
+      { user: "@TideRivalry", comment: "I cant help but feel concerned for our QB next game...	" },
     ],
   },
   {
@@ -2006,13 +2063,13 @@ const breakingNewsPosts = [
     ],
   },
   {
-    headline: "Eugene Wilson III (WR) Sidelined with ACL Tear",
-    content: "Sophomore wide receiver Eugene Wilson III suffered an ACL tear during practice on Wednesday. He will undergo surgery and is expected to be out for 9–12 months.",
+    headline: "Offensive Coordinatior Phoenix Rivero Hampered with ACL Tear",
+    content: "Offensive Coordinatior Phoenix Rivero suffered an ACL tear while demonstrating wind sprints on Wednesday. He will undergo surgery and is expected to make a full recovery in 9–12 months. While recovering, he will maintain coaching duties and will use a mobility scooter on gamedays.",
     timestamp: "11:30 AM - November 16, 2024",
     likes: 67,
     replies: [
-      { user: "@SwampFaithful", comment: "Devastated for Wilson. Wishing him a smooth recovery!" },
-      { user: "@BamaNation", comment: "That’s a tough break. Hate to see talent sidelined." },
+      { user: "@SwampFaithful", comment: "Devastated for Coach. Wishing him a smooth recovery!" },
+      { user: "@BamaNation", comment: "Coach Deboers makes sure his assistants are strong as Stallions." },
     ],
   },
   {
@@ -2026,8 +2083,8 @@ const breakingNewsPosts = [
     ],
   },
   {
-    headline: "Kelby Collins (EDGE) Suffers Broken Arm in Freak Accident",
-    content: "Sophomore EDGE rusher Kelby Collins broke his arm during a weightlifting session. He will be sidelined for at least six weeks, but trainers are optimistic about his recovery.",
+    headline: "Kelby Collins (EDGE) Suffers Broken Toe in Freak Accident",
+    content: "Sophomore EDGE rusher Kelby Collins broke his pinkie toe during a weightlifting session. He will be sidelined for at least 2 days, but trainers are optimistic he will make a full recovery.",
     timestamp: "4:20 PM - November 15, 2024",
     likes: 38,
     replies: [
@@ -2046,18 +2103,18 @@ const breakingNewsPosts = [
     ],
   },
   {
-    headline: "Hayden Hansen (TE) Dislocates Shoulder in Game",
-    content: "Sophomore tight end Hayden Hansen suffered a shoulder dislocation during Saturday’s game. He is expected to miss 4–6 weeks as he rehabs the injury.",
+    headline: "Hayden Hansen (TE) Dislocates Shoulder in Scrimmage",
+    content: "Sophomore tight end Hayden Hansen suffered a shoulder dislocation during Thursday's scrimmage. Trainers were able to replace the shoulder and was later able to re-enter the game.",
     timestamp: "8:00 AM - November 14, 2024",
     likes: 56,
     replies: [
-      { user: "@GatorFan4Life", comment: "Tough loss, but we have depth at TE. Heal up, Hansen!" },
+      { user: "@GatorFan4Life", comment: "Ouch, strong dude but glad we have depth at TE. Heal up, Hansen!" },
       { user: "@SECObserver", comment: "Injuries like these can derail Florida’s momentum." },
     ],
   },
   {
     headline: "Caden Jones (OL) Injures Knee in Practice",
-    content: "Freshman offensive lineman Caden Jones sprained his knee in practice. Trainers expect him to return in three weeks, barring any setbacks.",
+    content: "Freshman offensive lineman Caden Jones sprained his knee in practice. Trainers expect him to be a game-time decision, barring any setbacks.",
     timestamp: "1:30 PM - November 13, 2024",
     likes: 29,
     replies: [
@@ -2087,7 +2144,7 @@ function renderBreakingNews() {
 
   // Render the post
   postContainer.innerHTML = `
-    <p class="author">Posted by Bernard Melon, Gator-Byte News</p>
+    <p class="author">Bernard Melon, Gator-Byte News</p>
     <h3>${randomPost.headline}</h3>
     <p>${randomPost.content}</p>
     <p class="timestamp">${randomPost.timestamp}</p>
