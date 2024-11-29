@@ -883,9 +883,9 @@ button.like-btn:hover, button.reply-btn:hover {
       <tr>
         <td>4</td>
         <td>Sat, Sep 21</td>
-        <td>Vanderbilt</td>
+        <td><a href="#week-4" class="opponent-link" data-week="4">Vanderbilt</a></td></td>
         <td>Home</td>
-        <td>Pending</td>
+        <td>W 35-34</td>
       </tr>
       <tr>
         <td>5</td>
@@ -1750,7 +1750,179 @@ document.head.appendChild(style);
 
 </div>
 
+<!-- Week 4 Stats Page -->
+<div id="week-4" class="tab-content hidden">
+  <h2>Week 4 - Florida Gators Player Stats vs. Vanderbilt</h2>
+  
+  <h3>Passing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Yards</th>
+        <th>TD</th>
+        <th>INT</th>
+        <th>Long</th>
+        <th>Sacks</th>
+        <th>COMP</th>
+        <th>ATT</th>
+        <th>COMP%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>D. Lagway</td>
+        <td>122.2</td>
+        <td>184</td>
+        <td>3</td>
+        <td>1</td>
+        <td>22</td>
+        <td>1</td>
+        <td>17</td>
+        <td>33</td>
+        <td>51%</td>
+      </tr>
+    </tbody>
+  </table>
 
+  <h3>Rushing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>CAR</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>FUM</th>
+        <th>LONG</th>
+        <th>20+</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>20</td>
+        <td>171</td>
+        <td>8.6</td>
+        <td>1</td>
+        <td>0</td>
+        <td>69</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>T. Webb</td>
+        <td>5</td>
+        <td>62</td>
+        <td>12.4</td>
+        <td>1</td>
+        <td>0</td>
+        <td>38</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>D. Lagway</td>
+        <td>6</td>
+        <td>-22</td>
+        <td>-3.6</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>C. Carroll</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Receiving</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>REC</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>RAC</th>
+        <th>LONG</th>
+        <th>DROPS</th>
+      </tr>
+    </thead>
+    <tbody>
+	<tr>
+        <td>E. Badger</td>
+        <td>4</td>
+        <td>68</td>
+        <td>17.0</td>
+        <td>1</td>
+        <td>4.0</td>
+        <td>21</td>
+        <td>3</td>
+      </tr>
+	<tr>
+        <td>M. Johnson Jr.</td>
+        <td>7</td>
+        <td>46</td>
+        <td>6.6</td>
+        <td>0</td>
+        <td>7.0</td>
+        <td>22</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>E. Wilson III</td>
+        <td>2</td>
+        <td>34</td>
+        <td>17.0</td>
+        <td>1</td>
+        <td>1.5</td>
+        <td>20</td>
+        <td>0</td>
+      </tr>
+	 <tr>
+        <td>M. Burke</td>
+        <td>2</td>
+        <td>18</td>
+        <td>9.0</td>
+        <td>0</td>
+        <td>1.0</td>
+        <td>13</td>
+        <td>1</td>
+      </tr>
+	<tr>
+        <td>A. Boardingham</td>
+        <td>1</td>
+        <td>14</td>
+        <td>14.0</td>
+        <td>1</td>
+        <td>0.0</td>
+        <td>14</td>
+        <td>0</td>
+      </tr>
+	<tr>
+        <td>A. Mizel</td>
+        <td>1</td>
+        <td>4</td>
+        <td>4.0</td>
+        <td>0</td>
+        <td>2.0</td>
+        <td>4</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
 
  <!-- Gator Byte News -->
 
@@ -1784,6 +1956,20 @@ document.head.appendChild(style);
         allowfullscreen>
       </iframe>
       <p>Postgame analysis of the Gators' matchup against Texas A&M.</p>
+    </div>
+
+<div class="podcast" style="flex: 1 1 calc(50% - 20px); max-width: 400px; text-align: center;">
+      <!-- Episode 3 -->
+      <h3>Week 4: Vanderbilt Recap</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1034579886" 
+        width="100%" 
+        height="200" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>Postgame analysis of the Gators' matchup against Vanderbilt</p>
     </div>
 
     <!-- Add more episodes here as needed -->
@@ -2463,6 +2649,75 @@ renderBreakingNews();
 { question: "Who was the Florida Gators head coach during their first national championship in 1996?", options: ["Steve Spurrier", "Urban Meyer", "Ron Zook", "Will Muschamp"], answer: "Steve Spurrier" },
   { question: "What is the name of the Florida Gators’ home stadium?", options: ["The Swamp", "Ben Hill Griffin Stadium", "Doak Campbell Stadium", "Tiger Stadium"], answer: "Ben Hill Griffin Stadium" },
   { question: "Which Florida Gators quarterback won the Heisman Trophy in 2007?", options: ["Tim Tebow", "Danny Wuerffel", "Steve Spurrier", "Rex Grossman"], answer: "Tim Tebow" },
+  { question: "Which Florida Gators coach led the team to a perfect 12-0 regular season in 1995?", options: ["Steve Spurrier", "Urban Meyer", "Dan Mullen", "Ron Zook"], answer: "Steve Spurrier" },
+  { question: "What is the name of the rivalry game between Florida and Florida State?", options: ["Sunshine Showdown", "The Swamp Battle", "The State Championship", "Orange Bowl Classic"], answer: "Sunshine Showdown" },
+  { question: "Which Florida Gators player holds the single-game rushing record?", options: ["Fred Taylor", "Emmitt Smith", "Errict Rhett", "Taylor Jacobs"], answer: "Fred Taylor" },
+  { question: "Who was the Florida Gators quarterback during their 1996 National Championship season?", options: ["Danny Wuerffel", "Chris Leak", "Tim Tebow", "Shane Matthews"], answer: "Danny Wuerffel" },
+  { question: "Which Florida Gators player holds the record for most career receiving touchdowns?", options: ["Chris Doering", "Carlos Alvarez", "Ricky Nattiel", "Percy Harvin"], answer: "Chris Doering" },
+  { question: "Who holds the Florida Gators’ record for most sacks in a single season?", options: ["Alex Brown", "Jevon Kearse", "Jarvis Moss", "Brandon Spikes"], answer: "Alex Brown" },
+  { question: "Which former Florida Gators wide receiver was nicknamed 'The Human Joystick'?", options: ["Kadarius Toney", "Percy Harvin", "Jacquez Green", "Ricky Nattiel"], answer: "Percy Harvin" },
+  { question: "Who is the Florida Gators' career leader in tackles?", options: ["Wilber Marshall", "Scott Brantley", "David Little", "Brandon Spikes"], answer: "David Little" },
+  { question: "What year did Florida Gators football join the SEC East division?", options: ["1992", "1994", "1990", "1988"], answer: "1992" },
+  { question: "Which Florida Gators defensive back was nicknamed 'The Eraser'?", options: ["Reggie Nelson", "Lito Sheppard", "Vernon Hargreaves", "Joe Haden"], answer: "Reggie Nelson" },
+  { question: "Which Florida Gators player became the first to win the SEC Offensive Player of the Year award?", options: ["Emmitt Smith", "Shane Matthews", "Danny Wuerffel", "Rex Grossman"], answer: "Shane Matthews" },
+  { question: "Which Florida Gators player holds the single-game passing yards record?", options: ["Rex Grossman", "Kyle Trask", "Danny Wuerffel", "Chris Leak"], answer: "Rex Grossman" },
+  { question: "Which Florida Gators player was drafted first overall in the 1969 NFL Draft?", options: ["Steve Tannen", "Larry Smith", "Carlos Alvarez", "John Reaves"], answer: "Steve Tannen" },
+  { question: "Who was the Florida Gators’ leading tackler during their 2006 National Championship season?", options: ["Brandon Siler", "Brandon Spikes", "Reggie Nelson", "Jarvis Moss"], answer: "Brandon Siler" },
+  { question: "Which Florida Gators team set a school record for fewest points allowed in a season?", options: ["2006", "1995", "1984", "2012"], answer: "1984" },
+  { question: "What year did the Florida Gators first play in a bowl game?", options: ["1953", "1952", "1966", "1958"], answer: "1952" },
+  { question: "Which Florida Gators linebacker was known as 'The Mayor of Gainesville'?", options: ["Wilber Marshall", "Jack Youngblood", "Scot Brantley", "Brandon Spikes"], answer: "Scot Brantley" },
+  { question: "Who holds the Florida Gators’ single-season rushing touchdown record?", options: ["Emmitt Smith", "Fred Taylor", "Tim Tebow", "Errict Rhett"], answer: "Tim Tebow" },
+  { question: "What is the Florida Gators' longest winning streak against Florida State?", options: ["6 games", "5 games", "7 games", "4 games"], answer: "6 games" },
+  { question: "Which Florida Gators quarterback led the team to an SEC Championship in 2000?", options: ["Rex Grossman", "Doug Johnson", "Jesse Palmer", "Shane Matthews"], answer: "Rex Grossman" },
+  { question: "Which Florida Gators team was nicknamed 'The Fun 'n' Gun'?", options: ["1996", "1994", "1991", "1995"], answer: "1994" },
+  { question: "Which Florida Gators kicker won the Lou Groza Award in 1996?", options: ["Judd Davis", "Jeff Chandler", "Caleb Sturgis", "Bobby Raymond"], answer: "Judd Davis" },
+  { question: "Who was the Florida Gators’ starting quarterback during their 1984 SEC Championship season?", options: ["Kerwin Bell", "John Reaves", "Danny Wuerffel", "Chris Leak"], answer: "Kerwin Bell" },
+  { question: "Which Florida Gators running back was nicknamed 'Fast Freddie'?", options: ["Fred Taylor", "Errict Rhett", "Fred Jackson", "Ciatrick Fason"], answer: "Fred Taylor" },
+  { question: "Which Florida Gators player won the Maxwell Award in 2007?", options: ["Tim Tebow", "Danny Wuerffel", "Rex Grossman", "Percy Harvin"], answer: "Tim Tebow" },
+  { question: "Who holds the Florida Gators’ single-season record for receptions?", options: ["Carlos Alvarez", "Kadarius Toney", "Chris Doering", "Kyle Pitts"], answer: "Carlos Alvarez" },
+  { question: "What year did the Florida Gators host their first night game?", options: ["1958", "1960", "1965", "1967"], answer: "1958" },
+  { question: "Which Florida Gators player was nicknamed 'The Great Wall'?", options: ["Lomas Brown", "Max Starks", "Phil Trautwein", "Gerald Warren"], answer: "Lomas Brown" },
+  { question: "Who was the Florida Gators’ defensive MVP in the 1996 National Championship game?", options: ["Lawrence Wright", "Jevon Kearse", "Reggie Nelson", "Brandon Spikes"], answer: "Lawrence Wright" },
+  { question: "What year did the Florida Gators finish ranked No. 1 for the first time in the AP poll?", options: ["1996", "1995", "1994", "1984"], answer: "1984" },
+  { question: "Which Florida Gators player caught the game-winning touchdown in the 1997 Citrus Bowl?", options: ["Jacquez Green", "Ike Hilliard", "Reidel Anthony", "Travis McGriff"], answer: "Jacquez Green" },
+  { question: "Who was the Florida Gators head coach in 1990?", options: ["Steve Spurrier", "Charley Pell", "Galen Hall", "Ron Zook"], answer: "Steve Spurrier" },
+  { question: "Which Florida Gators team holds the record for most total offense in a season?", options: ["2008", "1996", "2020", "2010"], answer: "1996" },
+  { question: "Who was the Florida Gators' first-ever consensus All-American?", options: ["Jack Youngblood", "Carlos Alvarez", "Charlie LaPradd", "Steve Spurrier"], answer: "Charlie LaPradd" },
+  { question: "What is the record for the most points scored by Florida in a single game?", options: ["82", "70", "76", "62"], answer: "82" },
+  { question: "Which Florida Gators receiver led the team in receiving touchdowns in 1995?", options: ["Chris Doering", "Ike Hilliard", "Reidel Anthony", "Jacquez Green"], answer: "Reidel Anthony" },
+  { question: "Who was the Florida Gators’ head coach during the 1984 SEC Championship season?", options: ["Charley Pell", "Galen Hall", "Steve Spurrier", "Doug Dickey"], answer: "Galen Hall" },
+  { question: "What year did the Florida Gators last appear in the College Football Playoff?", options: ["They have not appeared", "2020", "2016", "2014"], answer: "They have not appeared" },
+  { question: "Who holds the Florida Gators’ single-game record for most rushing touchdowns?", options: ["Tim Tebow", "Emmitt Smith", "Fred Taylor", "Errict Rhett"], answer: "Tim Tebow" },
+  { question: "Which Florida Gators player won the Jim Thorpe Award in 1996?", options: ["Lawrence Wright", "Lito Sheppard", "Reggie Nelson", "Joe Haden"], answer: "Lawrence Wright" },
+  { question: "Which Florida Gators player was named SEC Freshman of the Year in 2019?", options: ["Kyle Trask", "Kadarius Toney", "Emory Jones", "Kyle Pitts"], answer: "Kyle Pitts" },
+  { question: "What year did Ben Hill Griffin Stadium officially become known as 'The Swamp'?", options: ["1992", "1991", "1990", "1989"], answer: "1992" },
+  { question: "Which Florida Gators linebacker was known for his leadership in the 2008 National Championship season?", options: ["Brandon Spikes", "Brandon Siler", "Jarvis Moss", "Reggie Nelson"], answer: "Brandon Spikes" },
+  { question: "What year did the Florida Gators first wear orange jerseys?", options: ["1989", "1983", "1987", "1991"], answer: "1989" },
+  { question: "Which Florida Gators kicker holds the record for the most field goals in a single season?", options: ["Caleb Sturgis", "Judd Davis", "Chris Perkins", "Evan McPherson"], answer: "Caleb Sturgis" },
+  { question: "Which Florida Gators running back scored a 99-yard touchdown in 1982?", options: ["James Massey", "John L. Williams", "Lorenzo Hampton", "Ciatrick Fason"], answer: "James Massey" },
+  { question: "Which Florida Gators player holds the career record for most total touchdowns?", options: ["Tim Tebow", "Danny Wuerffel", "Rex Grossman", "Chris Leak"], answer: "Tim Tebow" },
+  { question: "What is the name of the Florida Gators' pre-game tradition featuring Albert and Alberta?", options: ["Gator Walk", "Chomp Fest", "Swamp Stomp", "Gator Charge"], answer: "Gator Walk" },
+  { question: "Who was the Florida Gators quarterback in the 1994 SEC Championship Game?", options: ["Danny Wuerffel", "Terry Dean", "Shane Matthews", "Doug Johnson"], answer: "Danny Wuerffel" },
+  { question: "Which Florida Gators running back scored the game-winning touchdown in the 1997 Citrus Bowl?", options: ["Fred Taylor", "Ciatrick Fason", "John L. Williams", "Emmitt Smith"], answer: "Fred Taylor" },
+  { question: "Who did the Florida Gators defeat to win their first-ever BCS National Championship?", options: ["Ohio State", "Oklahoma", "Miami", "Notre Dame"], answer: "Ohio State" },
+  { question: "Which Florida Gators defensive lineman was nicknamed 'The Freak'?", options: ["Jevon Kearse", "Alex Brown", "Gerald Warren", "Dante Fowler Jr."], answer: "Jevon Kearse" },
+  { question: "What year did Florida Gators football play their first game?", options: ["1906", "1912", "1899", "1903"], answer: "1906" },
+  { question: "Who was the Florida Gators head coach during their 2017 SEC East division title season?", options: ["Jim McElwain", "Dan Mullen", "Will Muschamp", "Urban Meyer"], answer: "Jim McElwain" },
+  { question: "Which Florida Gators player scored a touchdown in the famous 'Cocktail Party' game in 1984?", options: ["Kerwin Bell", "Lorenzo Hampton", "James Massey", "Ricky Nattiel"], answer: "Ricky Nattiel" },
+  { question: "Which Florida Gators offensive lineman was nicknamed 'The Mountain'?", options: ["Max Starks", "Phil Trautwein", "Jonotthan Harrison", "Lomas Brown"], answer: "Max Starks" },
+  { question: "What was the result of the Florida Gators’ first-ever SEC Championship Game appearance in 1992?", options: ["Lost to Alabama", "Defeated Georgia", "Defeated Tennessee", "Lost to LSU"], answer: "Lost to Alabama" },
+  { question: "Which Florida Gators wide receiver led the team in receptions during the 2008 season?", options: ["Percy Harvin", "Riley Cooper", "Louis Murphy", "Andre Caldwell"], answer: "Percy Harvin" },
+  { question: "Who was the Florida Gators head coach before Urban Meyer?", options: ["Ron Zook", "Steve Spurrier", "Will Muschamp", "Jim McElwain"], answer: "Ron Zook" },
+  { question: "Which Florida Gators player wore the number 15 and became a national icon?", options: ["Tim Tebow", "Chris Leak", "Danny Wuerffel", "Kyle Trask"], answer: "Tim Tebow" },
+  { question: "Which Florida Gators defensive back was a first-round pick in the 2007 NFL Draft?", options: ["Reggie Nelson", "Lito Sheppard", "Joe Haden", "Vernon Hargreaves"], answer: "Reggie Nelson" },
+  { question: "What is the longest winning streak the Florida Gators have held over Georgia in their rivalry?", options: ["7 games", "6 games", "8 games", "9 games"], answer: "7 games" },
+  { question: "Which former Florida Gator is a two-time Super Bowl MVP?", options: ["Emmitt Smith", "Fred Taylor", "Tim Tebow", "Deion Sanders"], answer: "Emmitt Smith" },
+  { question: "Which Florida Gators defensive end was a finalist for the Lombardi Award in 2001?", options: ["Alex Brown", "Gerald Warren", "Jevon Kearse", "Jarvis Moss"], answer: "Alex Brown" },
+  { question: "Who holds the Florida Gators' record for most career all-purpose yards?", options: ["Percy Harvin", "Emmitt Smith", "Kadarius Toney", "Errict Rhett"], answer: "Errict Rhett" },
+  { question: "Which Florida Gators player set a school record with six touchdown passes in a single game?", options: ["Kyle Trask", "Rex Grossman", "Danny Wuerffel", "Chris Leak"], answer: "Kyle Trask" },
+  { question: "What year did the Florida Gators last win the SEC Championship?", options: ["2008", "2006", "2012", "2015"], answer: "2008" },
+  { question: "Which Florida Gators team holds the record for most points scored in a single season?", options: ["2008", "1996", "2020", "2006"], answer: "2008" },
+  { question: "What is the name of the Florida Gators mascot?", options: ["Albert", "Allie", "Chomper", "Gator"], answer: "Albert" },
   { question: "What year did the Florida Gators win their second national championship?", options: ["2006", "2008", "1996", "2010"], answer: "2006" },
   { question: "Who is the Florida Gators’ all-time leading rusher?", options: ["Emmitt Smith", "Fred Taylor", "Errict Rhett", "Tim Tebow"], answer: "Errict Rhett" },
   { question: "How many national championships have the Florida Gators won in football?", options: ["3", "4", "2", "5"], answer: "3" },
@@ -2643,11 +2898,25 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>DJ Lagway costs his team the chance at a victory with a crucial game-sealing Interception.</p>
     </div>
 
+	<!-- Week 4 Highlights -->
+    <div class="highlight">
+      <h3>Week 4: Florida vs. Vanderbilt</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1034625515" 
+        width="560" 
+        height="315" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>DJ Lagway Calls game in an incredible come from behind victory against conference rival Vandy!</p>
+    </div>
+
     <!-- PNG Image Gallery -->
 <div class="highlight">
   <h3>Photo Gallery</h3>
   <div id="photo-gallery">
-    <img src="https://imgur.com/VccTzZQ.png" alt="Highlight 1" class="gallery-img active">
+  <img src="https://imgur.com/VccTzZQ.png" alt="Highlight 1" class="gallery-img active">
   <img src="https://imgur.com/EAG29ix.png" alt="Highlight 2" class="gallery-img">
   <img src="https://imgur.com/RmgzTSB.png" alt="Highlight 3" class="gallery-img">
   <img src="https://imgur.com/5Ln9yDl.png" alt="Highlight 4" class="gallery-img">
@@ -2656,6 +2925,12 @@ document.addEventListener("DOMContentLoaded", () => {
   <img src="https://imgur.com/mCjbKqw.png" alt="Highlight 7" class="gallery-img">
   <img src="https://imgur.com/uU6Vqt3.png" alt="Highlight 8" class="gallery-img">
   <img src="https://imgur.com/scQrMyY.png" alt="Highlight 9" class="gallery-img">
+  <img src="https://imgur.com/cSzy2ye.png" alt="Highlight 10" class="gallery-img">
+  <img src="https://imgur.com/6nsLwiY.png" alt="Highlight 11" class="gallery-img">
+  <img src="https://imgur.com/avuVVqR.png" alt="Highlight 12" class="gallery-img">
+  <img src="https://imgur.com/y4EH5G9.png" alt="Highlight 13" class="gallery-img">
+  <img src="https://imgur.com/FTAaMDf.png" alt="Highlight 14" class="gallery-img">
+  
   </div>
   <button id="prev-btn" class="gallery-btn">Previous</button>
   <button id="next-btn" class="gallery-btn">Next</button>
